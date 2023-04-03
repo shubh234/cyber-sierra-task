@@ -1,38 +1,85 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
+  padding-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.photo-gallery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.photo-wrapper {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.photo-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  z-index: 1;
+}
+
+.modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal button {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  background: black;
+}
+
+.upload-button {
+  position: fixed;
+  bottom: 64px;
+  right: 116px;
+  width: 80px;
+  height: 80px;
+  background: #ff6500;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 66px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display-none {
+  display: none;
 }
